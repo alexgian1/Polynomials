@@ -21,15 +21,49 @@ for root in rational_roots:
 		rootExists = True
 		print "==============\nFound root: %s\n==============" %str(root)
 		print "New Coeffs: ",coeffsFactorised
+		print "(",
+		for i in coeffsFactorised[:-1]:
+			coeffFinal = int(coeffsFactorised[::-1].index(i) - 1) 
+			
+			if coeffFinal != 1 and coeffFinal != 0:
+				if i == 1:
+					print "+x^%d" %coeffFinal,
+				elif i > 0:
+					print "+%dx^%d" %(i,coeffFinal),
+				elif i == 0:
+					pass
+				elif i == -1:
+					print "-x^%d" %coeffFinal,
+				else:
+					print "%dx^%d" %(i,coeffFinal),
+			
+			elif coeffFinal == 1:
+				if i == 1:
+					print "+x",
+				elif i > 0:
+					print "+%dx" %i,
+				elif i == 0:
+					pass
+				elif i == -1:
+					print "-x",
+				else:
+					print "%dx" %i,
+			
+			else:
+				if i >= 0:
+					print "+%d" %i,
+				else:
+					print i,
+		if root > 0:
+			print ")","(x-%d)"%root
+		elif root < 0:
+			root2 = str(root)[1:]      #Remove the minus (-x --> x)
+			print ")(x+%s)" %root2
 		break
 	else :
 		rootExists = False
 if not rootExists:
 	print "==============\nNo Root Found\n=============="
 	
-input()
+raw_input()
 		
-		
-		
-	
-	
