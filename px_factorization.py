@@ -20,7 +20,7 @@ for root in rational_roots:
 	if result == 0:
 		rootExists = True
 		print "==============\nFound root: %s\n==============" %str(root)
-		print "New Coeffs: ",coeffsFactorised
+		print "Horner Results: ",coeffsFactorised
 		print "(",
 		maxIndex = len(coeffsFactorised) - 2
 		for i in coeffsFactorised[:-1]:
@@ -78,9 +78,5 @@ for root in rational_roots:
 if not rootExists:
 	print "==============\nNo Root Found\n=============="
 	
+	
 raw_input()
-		
-		
-		
-	
-	
