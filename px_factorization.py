@@ -10,7 +10,6 @@ except ValueError:
 	raw_input()
 	exit()
 log.write("Coefficients entered: %s \n--------------\n" %str(coefficients))
-coefficients = [int(coefficient) for coefficient in coefficients]  #Convert every str to int in list
 a0 = coefficients[len(coefficients)-1]
 rational_roots = [1,-1]
 for num in range(1,abs(a0)):
@@ -35,8 +34,6 @@ for root in rational_roots:
 		log.write("Horner Results: %s \n--------------\n" %coeffsFactorised)
 		print "P(x) = (",
 		log.write("P(x) = (")
-		print "Horner Results: ",coeffsFactorised
-		print "(",
 		maxIndex = len(coeffsFactorised) - 2
 		for i in coeffsFactorised[:-1]:
 			coeffFinal = int(coeffsFactorised[::-1].index(i) - 1) 
@@ -48,10 +45,6 @@ for root in rational_roots:
 				elif i > 0:
 					print "%dx^%d" %(i,coeffFinal),
 					log.write("%dx^%d" %(i,coeffFinal))
-
-				elif i > 0:
-					print "%dx^%d" %(i,coeffFinal),
-
 				elif i == 0:
 					pass
 				elif i == -1:
@@ -60,8 +53,6 @@ for root in rational_roots:
 				else:
 					print "%dx^%d" %(i,coeffFinal),
 					log.write("%dx^%d" %(i,coeffFinal))
-				else:
-					print "%dx^%d" %(i,coeffFinal),
 			
 			elif coeffFinal != 1 and coeffFinal != 0:
 				if i == 1:
@@ -116,7 +107,7 @@ for root in rational_roots:
 if not rootExists:
 	print "==============\nNo Root Found\n=============="
 	log.write("--------------\nNo Root Found\n--------------\n\n\n")
-log.close()	
+log.close()		
 
 	
 	
