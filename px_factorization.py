@@ -108,5 +108,4 @@ if not rootExists:
 	print "==============\nNo Root Found\n=============="
 	log.write("--------------\nNo Root Found\n--------------\n\n\n")
 log.close()	
-raw_input()
-		
+
